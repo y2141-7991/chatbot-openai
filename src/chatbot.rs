@@ -44,7 +44,7 @@ pub async fn run_chat_loop(
     Ok(())
 }
 
-fn get_ai_response(body: &Value) -> &str {
+pub fn get_ai_response(body: &Value) -> &str {
     body["choices"][0]["message"]["content"]
         .as_str()
         .unwrap()
